@@ -2025,8 +2025,8 @@ font-size: 25px;
     }
 
     .expertise-section .h2 {
-        font-size: 8vh;
-        line-height: 8vh;
+        /* font-size: 8vh;
+        line-height: 8vh; */
     }
 
     .h1 span {
