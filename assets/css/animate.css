@@ -1,0 +1,270 @@
+ @keyframes flip-bottom-to-top {
+    from {
+        transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+        transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+   /* Initial state before animation starts */
+   .flip-animation {
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    /* transform: perspective(1000px) rotateX(90deg);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease; */
+  }
+  
+   /* Class to trigger the animation */
+   .flip-animation.flip-active {
+    animation: flip-bottom-to-top 1s forwards;
+  }
+
+  @keyframes move-bottom-to-top {
+    from {
+      transform: translateY(10%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  
+  /* Initial state before animation starts */
+  .move-animation {
+    transform: translateY(10%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  
+  /* Class to trigger the animation */
+  .move-animation.move-active {
+    animation: move-bottom-to-top 1s forwards;
+  }
+  
+  /* top to bottom */
+  /* Initial state before animation starts */
+  .t-to-b-in {
+    transform: translateY(-10%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  
+  /* Class to trigger the animation */
+  .t-to-b-in.t-to-b-f {
+    animation: top-to-bottom 1s forwards;
+  }
+  @keyframes top-to-bottom {
+    from {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
+
+
+
+/* Preloader */
+.content{
+    display: none;
+}
+.handle-preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    z-index: 9999999;
+}
+
+.handle-preloader .animation-preloader {
+    position: absolute;
+    z-index: 100;
+}
+
+.handle-preloader .animation-preloader .spinner {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 0 auto 45px auto;
+    animation: spinner 1s infinite linear;
+}
+
+.handle-preloader .animation-preloader .txt-loading {
+    text-align: center;
+    user-select: none;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading {
+    position: relative;
+    display: inline-block;
+    font-family: var(--thm-font-3);
+    font-weight: 700;
+    letter-spacing: 15px;
+    font-size: 70px;
+    line-height: 70px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:before {
+    animation: letters-loading 4s infinite;
+    content: attr(data-text-preloader);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
+    animation-delay: 0.1s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(3):before {
+    animation-delay: 0.2s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(4):before {
+    animation-delay: 0.3s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(5):before {
+    animation-delay: 0.4s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(6):before {
+    animation-delay: 0.5s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before {
+    animation-delay: 0.6s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before {
+    animation-delay: 0.7s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(9):before {
+    animation-delay: 0.8s;
+}
+
+.handle-preloader .loader-section {
+    background-color: #ffffff;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: calc(50% + 1px);
+}
+
+.preloader .loaded .animation-preloader {
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:before {
+    color: #ffffff;
+}
+
+.handle-preloader .animation-preloader .spinner {
+    border: 3px solid #ffffff;
+    border-top-color: rgba(255, 255, 255, 0.7);
+}
+
+/* AnimaciĆĀ³n del preloader */
+@keyframes spinner {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+/* 
+@keyframes letters-loading {
+
+    0%,
+    75%,
+    100% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+
+    25%,
+    50% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+} */
+
+.loader-wrap .layer-one {
+    position: absolute;
+    left: 0%;
+    top: 0;
+    width: 33.3333%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loader-wrap .layer-two {
+    position: absolute;
+    left: 33.3333%;
+    top: 0;
+    width: 33.3333%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loader-wrap .layer-three {
+    position: absolute;
+    left: 66.6666%;
+    top: 0;
+    width: 33.3333%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loader-wrap .layer .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--thm-black);
+    transition: left 1s ease;
+    /* transition: left 1s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
+}
+
+@media screen and (max-width: 767px) {
+    .handle-preloader .animation-preloader .spinner {
+        height: 8em;
+        width: 8em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .handle-preloader .animation-preloader .spinner {
+        height: 7em;
+        width: 7em;
+    }
+
+    .handle-preloader .animation-preloader .txt-loading .letters-loading {
+        font-size: 40px;
+        letter-spacing: 10px;
+    }
+}

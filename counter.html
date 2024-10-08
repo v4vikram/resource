@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+</head>
+<body>
+    <section style="height: 100vh;"></section>
+  <!-- Counter Element -->
+  <div id="counter">1000</div>
+
+  <script>
+    $(document).ready(function() {
+      $('#counter').counterUp({
+        delay: 10,   // Delay between each count
+        time: 1000   // Duration for the whole animation
+      });
+    });
+  </script>
+
+</body>
+</html>

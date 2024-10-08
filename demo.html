@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tabs button {
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tabs">
+  <button data-tab="tab-1">Tab 1</button>
+  <button data-tab="tab-2">Tab 2</button>
+  <button data-tab="tab-3">Tab 3</button>
+</div>
+
+<div class="tab-contents">
+  <div id="tab-1" class="tab-content">Content for Tab 1</div>
+  <div id="tab-2" class="tab-content">Content for Tab 2</div>
+  <div id="tab-3" class="tab-content">Content for Tab 3</div>
+</div>
+
+<script>
+  // jQuery script to handle tab click event
+  $(document).ready(function() {
+    $(".tabs button").click(function() {
+      // Get the tab ID from the clicked button's data-tab attribute
+      var tabId = $(this).data("tab");
+
+      // Hide all tab contents
+      $(".tab-content").removeClass("active");
+
+      // Show the tab content corresponding to the clicked tab
+      $("#" + tabId).addClass("active");
+    });
+  });
+</script>
+
+</body>
+</html>
